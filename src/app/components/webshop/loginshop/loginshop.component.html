@@ -1,0 +1,63 @@
+<section class="page-header">
+  <div class="overly"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="content text-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent justify-content-center">
+              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Login</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="account section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="login-form border p-5">
+          <div class="text-center heading">
+            <h2 class="mb-2">Login</h2>
+            <p class="lead">Don’t have an account? <a style="color: #f44336;" (click)="register()">Create a free
+                account</a></p>
+          </div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="loginByEmail()">
+            <div class="form-group">
+              <label>Enter username</label>
+              <input type="email" class="form-control" [(ngModel)]="email" placeholder="Enter Username"
+                formControlName="email" required>
+            </div>
+            <div class="form-group">
+              <label>Enter Password</label>
+              <a class="float-right" routerLink="/forgot-password">Forget password?</a>
+              <input type="password" [(ngModel)]="password" class="form-control" placeholder="Enter Password"
+                formControlName="password" required>
+            </div>
+            <!-- <div class="form-group">
+              <p *ngIf="errorMessage.length > 0" style="color: red;">
+                {{errorMessage}}</p>
+
+              <p *ngIf="error.message.length > 0" style="color: red;">
+                {{error.message}} </p>
+
+            </div> -->
+            <div class="form-group">
+              <button type="submit" class="btn btn-main mt-3 btn-block"
+                [disabled]='!this.loginForm.valid'>Login</button>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-md-12"> <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline"
+                (click)="loginWithGoogle()"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup
+                Using Google</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

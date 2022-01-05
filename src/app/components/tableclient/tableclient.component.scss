@@ -1,0 +1,26 @@
+thead {
+    background-color: white;
+}
+
+th {
+    text-align: center;
+
+}
+td {
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    width: 14.2%;
+    height: 6rem;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+input[type="file"] { display: none; }

@@ -1,0 +1,71 @@
+<app-header></app-header>
+<section class="page-header">
+    <div class="overly"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="content text-center">
+                    <h1 class="mb-3">Order</h1>
+                    <p>Order</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent justify-content-center">
+                            <li class="breadcrumb-item"><a routerlink="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Order </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="user-dashboard page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-5 col-sm-12 col-lg-3">
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link active" routerLink="/order">Orders</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerlink="/order">Downloads</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerlink="/order">Address</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/order">Account</a>
+                </div>
+                <div class="nav flex-column nav-pills">
+                    <a class="nav-link" routerLink="/order">Log out</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 col-sm-12 col-19-9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">status</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of this.itemList">
+                            <th scope="row">{{item.ID}}</th>
+                            <td>{{item.email}}</td>
+                            <td *ngIf="item.status == 3">Chờ xác nhận</td>
+                            <td *ngIf="item.status == 2">Đang giao hàng</td>
+                            <td *ngIf="item.status == 1">Đã nhận hàng</td>
+                            <td>{{item.totalPrice}} $</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
